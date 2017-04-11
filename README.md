@@ -19,3 +19,4 @@ TvMaze - TCL script for Eggdrop bots to fetch airtimes for your favorite shows
 	
 	Version history:
 		1.0	-	Initial release
+		1.0.1	.	Fix invalid channel flag in ::announce
