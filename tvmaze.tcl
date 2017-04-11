@@ -19,6 +19,7 @@
 ##
 ## Version history:
 ##		1.0	-	Initial release
+##		1.0.1	-	Fixed invalid channel flag in ::announce
 
 namespace eval ::tvmaze {
 
@@ -144,7 +145,7 @@ namespace eval ::tvmaze {
 
 	proc announce { nick mask hand channel args } {
 		# Is the channel set for using this script
-		if {[channel get $channel epguides] && [onchan $nick $channel]} {
+		if {[channel get $channel tvmaze] && [onchan $nick $channel]} {
 			if {[llength [lindex $args 0]]} {
 				set showData [getShow $args]
 				foreach item $showData { putquick "PRIVMSG $channel :$item" }
